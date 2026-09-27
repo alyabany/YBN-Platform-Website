@@ -1,0 +1,4 @@
+.hero-art{isolation:isolate;margin-inline:auto;max-width:355px;min-height:0}
+.hero-art img{border:1px solid rgba(255,255,255,.72);border-radius:22px;box-shadow:var(--shadow);display:block;height:auto;position:relative;width:100%;z-index:1}
+.hero-art .orb{z-index:0}.hero-art .orb-one,.hero-art .orb-two{left:-8%}
+@media (min-width:850px){.hero-art{max-width:390px}}
