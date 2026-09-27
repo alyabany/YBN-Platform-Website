@@ -20,7 +20,7 @@
 1. ارفع التغييرات إلى فرع `main`.
 2. من المستودع افتح **Settings → Pages**.
 3. اختر **Deploy from a branch**، ثم `main` و`/ (root)`، واضغط **Save**.
-4. بعد ظهور رابط النشر النهائي، استبدل `https://YOUR-SITE-URL/` في الملفات التالية بالرابط الفعلي، مع الإبقاء على الشرطة المائلة الأخيرة: `index.html` (canonical ووسوم Open Graph وTwitter وJSON-LD)، و`robots.txt`، و`sitemap.xml`.
+4. بعد ظهور رابط النشر النهائي، استبدل `https://alyabany.github.io/YBN-Platform-Website` في الملفات التالية بالرابط الفعلي، مع الإبقاء على الشرطة المائلة الأخيرة: `index.html` (canonical ووسوم Open Graph وTwitter وJSON-LD)، و`robots.txt`، و`sitemap.xml`.
 5. استخدم الرابط الذي تعرضه GitHub Pages فعليًا أو نطاقك المخصص؛ لا تفترض عنوانًا قبل تفعيل النشر.
 
 ## Google Search Console
