@@ -1,0 +1,5 @@
+# Replace YOUR-SITE-URL with the final public site URL before deploying.
+User-agent: *
+Allow: /
+
+Sitemap: https://YOUR-SITE-URL/sitemap.xml
