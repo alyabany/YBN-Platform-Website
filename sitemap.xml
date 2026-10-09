@@ -1,3 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Replace YOUR-SITE-URL with the final public site URL before deploying. -->
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://alyabany.github.io/YBN-Platform-Website</loc></url></urlset>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://alyabany.github.io/YBN-Platform-Website/</loc>
+    <lastmod>2026-10-09</lastmod>
+  </url>
+</urlset>

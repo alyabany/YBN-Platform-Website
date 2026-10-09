@@ -1,4 +1,3 @@
-# Replace YOUR-SITE-URL with the final public site URL before deploying.
 User-agent: *
 Allow: /
 
