@@ -1,0 +1,107 @@
+/* ==========================================================
+   motion.css : حركات الصفحة (يُحمَّل بعد bot-theme.css)
+   الألوان مأخوذة من bot-theme.css (--primary / --mint)
+   ========================================================== */
+:root{--glow:rgba(245,197,66,.45)}
+
+/* ---------- لوغو الهيرو (صورة أو فيديو): طفو ناعم ---------- */
+@keyframes ybn-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+.hero-art img,.hero-art .hero-video{ width:100%; height:auto; max-height:520px; object-fit:contain; mix-blend-mode:screen; }
+
+/* فيديو اللوغو: الأسود يذوب بخلفية الصفحة */
+.hero-video{display:block;width:100%;height:auto;max-height:520px;object-fit:cover;mix-blend-mode:screen}
+
+/* ---------- لوغو الهيدر ---------- */
+.brand-logo{transition:transform .4s ease,filter .4s ease}
+.brand:hover .brand-logo{transform:rotate(-8deg) scale(1.1);filter:drop-shadow(0 0 10px var(--glow))}
+
+/* ---------- الكرات الخلفية ---------- */
+@keyframes ybn-drift{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(24px,-30px) scale(1.12)}}
+.orb-one{animation:ybn-drift 14s ease-in-out infinite}
+.orb-two{animation:ybn-drift 18s ease-in-out infinite reverse}
+
+/* ---------- تدرج ذهبي متحرك على سطر العنوان (نفس ألوان bot-theme) ---------- */
+@keyframes ybn-shine{to{background-position:200% center}}
+.hero h1 span{
+  background:linear-gradient(105deg,#f6c842,#fff9dc,#f6c842);
+  background-size:200% auto;
+  -webkit-background-clip:text;background-clip:text;
+  color:transparent;-webkit-text-fill-color:transparent;
+  animation:ybn-shine 5s linear infinite;
+}
+
+/* ---------- ظهور العناصر عند التمرير ----------
+   ملاحظة: الـ transition هنا يجمع الظهور + الـ hover حتى لا يلغي أحدهما الآخر */
+.js .reveal{
+  opacity:0;translate:0 26px;
+  transition:
+    opacity .7s ease var(--d,0s),
+    translate .7s ease var(--d,0s),
+    transform .3s ease,
+    box-shadow .3s ease;
+}
+.js .reveal.in{opacity:1;translate:0 0}
+
+/* ---------- Hover للكروت ---------- */
+.service-card:hover,.contact-card:hover{transform:translateY(-6px);box-shadow:0 14px 34px rgba(245,197,66,.18)}
+.screens-grid figure:hover{transform:translateY(-8px) scale(1.02)}
+
+/* ---------- لمعة تمر على الزر الرئيسي ---------- */
+.button-primary{position:relative;overflow:hidden}
+.button-primary::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.35) 50%,transparent 70%);
+  transform:translateX(-120%);animation:ybn-sweep 4s ease-in-out infinite;
+}
+@keyframes ybn-sweep{0%,60%{transform:translateX(-120%)}100%{transform:translateX(120%)}}
+
+/* ---------- احترام إعداد "تقليل الحركة" ---------- */
+@media (prefers-reduced-motion:reduce){
+  *,*::after{animation:none!important;transition:none!important}
+  .js .reveal{opacity:1;translate:none}
+}
+
+/* ---------- إطار فيديو الهيرو: ذهبي، أهدأ، ومنسجم مع واجهة البوت ---------- */
+.hero-art{
+  isolation:isolate;
+  margin-inline:auto;
+  max-width:min(94vw,620px);
+  min-height:0;
+  padding:20px;
+}
+.hero-art::before{
+  content:"";
+  position:absolute;
+  inset:7% 5%;
+  z-index:-2;
+  border:1px solid rgba(245,197,66,.25);
+  border-radius:28px;
+  background:radial-gradient(circle at 50% 45%,rgba(245,197,66,.18),rgba(25,20,8,.18) 42%,transparent 72%);
+  box-shadow:0 0 55px rgba(245,197,66,.13),inset 0 0 44px rgba(245,197,66,.06);
+}
+.hero-art::after{
+  content:"";
+  position:absolute;
+  inset:13% 11%;
+  z-index:-1;
+  border:1px solid rgba(255,225,138,.22);
+  border-radius:22px;
+  transform:rotate(45deg);
+  box-shadow:0 0 38px rgba(245,197,66,.12);
+}
+.hero-art .orb{display:none}
+.hero-art .hero-video{
+  display:block;
+  width:100%;
+  height:auto;
+  max-height:620px;
+  object-fit:contain;
+  mix-blend-mode:screen;
+  filter:contrast(1.06) saturate(1.08) drop-shadow(0 0 20px rgba(245,197,66,.24));
+  position:relative;
+  z-index:1;
+}
+@media (min-width:850px){
+  .hero-art{max-width:620px;padding:26px}
+  .hero-art .hero-video{max-height:650px}
+}
